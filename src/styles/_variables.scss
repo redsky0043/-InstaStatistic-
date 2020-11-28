@@ -1,0 +1,25 @@
+// Internal variables
+$x-color-white: #EDECEC;
+$x-color-black: #1A1A1A;
+$x-color-gray: #292929;
+$x-color-violet: #C58FFF;
+
+
+// Global Variables
+$palette-primary: $x-color-white;
+$palette-bg: $x-color-black;
+$palette-active: $x-color-violet;
+$palette-footer: $x-color-gray;
+
+
+// Google Fonts
+%pt-sans-narrow-regular {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 400;
+}
+
+%pt-sans-narrow-bold {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 700;
+}
+
