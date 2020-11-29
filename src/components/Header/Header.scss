@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 24px 40px 75px;
+
+    &__logo {
+        font-size: 26px;
+        line-height: 34px;
+        color: $palette-active;
+        @extend %pt-sans-narrow-bold;
+        
+        &:hover .header__text-wrapper{
+            color: $palette-active;
+        }
+
+        &:hover .header__text {
+            color: #fff;
+        }
+    }
+
+    &__text {
+        transition: all .3s ease;
+    }
+    
+    &__text-wrapper {
+        transition: all .3s ease;
+        color: $palette-text-light;
+    }
+
+    &__contacts {
+        width: 100%;
+        max-width: 192px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.social-link img{
+    transition: all .3s ease;
+
+    &:hover {
+        opacity: .5;
+    }
+}
+

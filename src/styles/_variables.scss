@@ -1,13 +1,17 @@
 // Internal variables
-$x-color-white: #EDECEC;
-$x-color-black: #1A1A1A;
+$x-color-white: #FFFFFF;
+$x-color-light-gray: #EDECEC;
+$x-color-dark-gray: #1A1A1A;
 $x-color-gray: #292929;
 $x-color-violet: #C58FFF;
+$x-color-black: #000000;
 
 
 // Global Variables
-$palette-primary: $x-color-white;
-$palette-bg: $x-color-black;
+$palette-primary: $x-color-light-gray;
+$palette-text-light: $x-color-white;
+$palette-text-dark: $x-color-black;
+$palette-bg: $x-color-dark-gray;
 $palette-active: $x-color-violet;
 $palette-footer: $x-color-gray;
 

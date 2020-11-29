@@ -9,6 +9,8 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -38,6 +40,7 @@ body {
     position: relative;
     background-color: $palette-bg;
     color: $palette-primary;
+    @extend %pt-sans-narrow-regular;
 }
 
 button {
@@ -49,11 +52,13 @@ button {
 
 input {
     outline: none;
+    border: none;
+    border-radius: 0px;
 }
 
-// .container {
-//     max-width: 768px;
-//     padding: 0 20px;
-//     margin: 0 auto;
-// }
+.container {
+    max-width: 760px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
 
