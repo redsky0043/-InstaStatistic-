@@ -15,22 +15,22 @@ export const Header:React.FC = () => {
             </a>
             <ul className="header__contacts">
                 <li className="social-item">
-                    <a className="social-link" href="https://github.com/redsky0043/InstaStatistic" target="_blank">
+                    <a className="social-link" href="#" target="_blank" >
                         <img className="social-img" src={github} alt="social" />
                     </a>
                 </li>
                 <li className="social-item">
-                    <a className="social-link" href="https://www.linkedin.com/in/serhii-boiko-6aa713199/" target="_blank">
+                    <a className="social-link" href="#" target="_blank" >
                         <img className="social-img" src={linkedin} alt="social" />
                     </a>
                 </li>
                 <li className="social-item">
-                    <a className="social-link" href="https://www.instagram.com/redsky0043/?hl=ru" target="_blank">
+                    <a className="social-link" href="#" target="_blank" >
                         <img className="social-img" src={instagram} alt="social" />
                     </a>
                 </li>
                 <li className="social-item">
-                    <a className="social-link" href="https://www.facebook.com/sergey.boyko.0043" target="_blank">
+                    <a className="social-link" href="#" target="_blank" >
                         <img className="social-img" src={facebook} alt="social" />
                     </a>
                 </li>

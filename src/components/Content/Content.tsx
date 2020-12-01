@@ -4,28 +4,30 @@ import './Content.scss';
 import { useState, useEffect } from 'react';
 
 
-export const Content: React.FC = () => {
+export const Content:React.FC = () => {
     // const data = useData();
     const [inputValue, setInputValue] = useState(''); // значение поля Input
-    const [nickName, setNickName] = useState(''); // установка никнейма
+    const [nickName, setNickName] = useState('edouard_courty'); // установка никнейма
     const [data, setData] = useState({}); // данные с инстаграма
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>):void => {
         setInputValue(e.target.value);
-    }
+    } 
 
-    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>):void => {
         e.preventDefault();
         setNickName(inputValue);
     }
+    
+    useEffect(() => {
+        const userInstagram = require("user-instagram");
 
-    const userInstagram = require("user-instagram");
-
-    userInstagram(nickName)
-        .then((results: Object) => {
-            setData(results);
-        })
-        .catch(console.error);
+        userInstagram(nickName)
+            .then((results: Object) => {
+                setData(results);
+            })
+            .catch(console.error);
+    }, []);
 
     return (
         <div className="content container">
