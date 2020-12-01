@@ -1,3 +1,15 @@
-// @media (max-width: 650px) {
-    
-// }
+@media (max-width: 420px) {
+    .header {
+        flex-direction: column;
+
+        &__logo {
+            margin-bottom: 15px;
+        }
+    }
+
+    .content {
+        &__form {
+            grid-template-columns: 1fr;
+        }
+    }
+}

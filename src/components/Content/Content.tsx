@@ -4,27 +4,48 @@ import './Content.scss';
 import { useState, useEffect } from 'react';
 
 
-export const Content = () => {
+export const Content:React.FC = () => {
     // const data = useData();
-    // const [userName, setUserName] = useState();
+    const [inputValue, setInputValue] = useState(''); // значение поля Input
+    const [nickName, setNickName] = useState('edouard_courty'); // установка никнейма
+    const [data, setData] = useState({}); // данные с инстаграма
 
-    const userInstagram = require("user-instagram");
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>):void => {
+        setInputValue(e.target.value);
+    } 
 
-    userInstagram('edouard_courty')
-        .then(console.log)
-        .catch(console.error);
+    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>):void => {
+        e.preventDefault();
+        setNickName(inputValue);
+    }
+    
+    useEffect(() => {
+        const userInstagram = require("user-instagram");
+
+        userInstagram(nickName)
+            .then((results: Object) => {
+                setData(results);
+            })
+            .catch(console.error);
+    }, []);
 
     return (
         <div className="content container">
             <p className="content__text">
                 nickname
             </p>
-            <form className="content__form" name="user-data">
+            <form
+                className="content__form"
+                name="user-data"
+                onSubmit={handleFormSubmit}
+            >
                 <input
                     className="content__input"
                     name="nickname"
                     type="text"
                     placeholder="Enter you name"
+                    value={inputValue}
+                    onChange={handleInputChange}
                     required
                 />
                 <button className="content__btn">

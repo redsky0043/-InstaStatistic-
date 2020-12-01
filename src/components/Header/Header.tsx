@@ -5,7 +5,7 @@ import instagram from '../../images/instagram.svg';
 import facebook from '../../images/facebook.svg';
 import './Header.scss';
 
-export const Header = () => {
+export const Header:React.FC = () => {
     return (
         <div className="header">
             <a className="header__logo" href="#" >
