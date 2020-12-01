@@ -1,21 +1,22 @@
 import * as React from 'react';
 import './Content.scss';
 // import { useData } from "../useData/useData";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 export const Content = () => {
     // const data = useData();
-    const [data, setData] = useState();
-    
-    const userInstagram = require("user-instagram");
-    
-    userInstagram('edouard_courty')
-    .then((response: any) => response.json())
-    .then((results: any) => setData(results))
-    .catch(console.error);
-    
-    // console.log(data);
+    const [userName, setUserName] = useState();
+
+    // const userInstagram = require("user-instagram");
+
+    // userInstagram('edouard_courty')
+    //     .then(console.log)
+    //     .catch(console.error);
+
+    const handleOnChange = (e: any) => {
+        setUserName(e.target.value)
+    }
 
     return (
         <div className="content container">
@@ -28,6 +29,9 @@ export const Content = () => {
                     type="text"
                     placeholder="Enter you name"
                     name="nickname"
+                    value={userName}
+                    // onChange={e => setUserName(e.target.value)}
+                    onChange={handleOnChange}
                     required
                 />
                 <button className="content__btn">
