@@ -11,6 +11,7 @@
         line-height: 34px;
         color: $palette-active;
         @extend %pt-sans-narrow-bold;
+        //@extend %bebas-regular;
         
         &:hover .header__text-wrapper{
             color: $palette-active;

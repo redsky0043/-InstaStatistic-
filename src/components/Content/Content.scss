@@ -1,57 +1,90 @@
 @import "../../styles/variables";
 
 .content {
-    &__text {
-        font-size: 18px;
-        line-height: 23px;
-        margin-bottom: 14px;
-        text-transform: capitalize;
+  &__text {
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 14px;
+    text-transform: capitalize;
+  }
+
+  &__form {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 30px;
+    margin-bottom: 60px;
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 22px 16px 21px;
+    color: $palette-text-dark;
+    @extend %pt-sans-narrow-regular;
+    border: 2px solid $palette-border;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: $palette-active;
     }
 
-    &__form {
-        width: 100%;
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px 30px;
+    &:focus {
+      border: 2px solid $palette-active;
     }
+  }
 
-    &__input {
-        width: 100%;
-        font-size: 16px;
-        line-height: 21px;
-        padding: 22px 16px 21px;
-        color: $palette-text-dark;
-        @extend %pt-sans-narrow-regular;
-        border: 2px solid #ffffff;
-        transition: all 0.3s ease;
+  &__btn {
+    width: 100%;
+    background: #c58fff;
+    border-radius: 0px;
+    padding: 20px 0;
+    font-size: 22px;
+    line-height: 28px;
+    color: $palette-text-light;
+    @extend %pt-sans-narrow-regular;
+    transition: all 0.3s ease;
 
-        &::placeholder {
-            color: $palette-active;
-        }
-
-        &:focus {
-            border: 2px solid $palette-active;
-        }
+    &:hover {
+      background-color: #a461ec;
     }
+  }
+}
 
-    &__btn {
-        width: 100%;
-        background: #C58FFF;
-        border-radius: 0px;
-        padding: 20px 0;
-        font-size: 22px;
-        line-height: 28px;
-        color: $palette-text-light;
-        @extend %pt-sans-narrow-regular;
-        transition: all 0.3s ease;
+.posts {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 30px;
+}
 
-        &:hover {
-            background-color: #a461ec;
-        }
-    }
+.post {
+  width: 100%;
+  height: 100%;
+  @extend %pt-sans-narrow-bold;
+  position: relative;
+  font-size: 18px;
+  line-height: 23px;
+
+  &__img {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__wrap {
+    font-size: 16px;
+    @extend %pt-sans-narrow-regular;
+  }
 }
 
 @import "../../styles/media";
-

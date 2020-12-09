@@ -14,7 +14,7 @@ $palette-text-dark: $x-color-black;
 $palette-bg: $x-color-dark-gray;
 $palette-active: $x-color-violet;
 $palette-footer: $x-color-gray;
-
+$palette-border: $x-color-white;
 
 // Google Fonts
 %pt-sans-narrow-regular {
@@ -24,6 +24,11 @@ $palette-footer: $x-color-gray;
 
 %pt-sans-narrow-bold {
     font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 700;
+}
+
+%bebas-regular {
+    font-family: 'Bebas Neue', cursive;
     font-weight: 700;
 }
 

@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
+import {useData} from "../../Hooks/useData/useData";
 import './Content.scss';
-// import { useData } from "../useData/useData";
 
 
 export const Content: React.FC = () => {
-    // const data = useData();
-    const [inputValue, setInputValue] = useState(''); // значение поля Input
-    const [nickName, setNickName] = useState(''); // установка никнейма
-    const [data, setData] = useState({}); // данные с инстаграма
+    const [inputValue, setInputValue] = useState('');
+    const [nickname, setNickname] = useState('');
+    const userData: any = useData(nickname).instagramData;
+    const userPosts: any = userData.posts;
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setInputValue(e.target.value);
@@ -15,16 +15,28 @@ export const Content: React.FC = () => {
 
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        setNickName(inputValue);
+        setNickname(inputValue);
     }
 
-    const userInstagram = require("user-instagram");
-
-    userInstagram(nickName)
-        .then((results: Object) => {
-            setData(results);
-        })
-        .catch(console.error);
+    let itemsToRender;
+    if (userPosts) {
+        itemsToRender = userPosts.map((post: any) =>
+            <div className="post" key={post.id}>
+                <img
+                    className="post__img"
+                    src={post.imageUrl}
+                    alt="post"
+                />
+                <p className="post__text">
+                    {Math.round(post.likesCount / userData.subscribersCount * 100 ) } % &nbsp;
+                    <span className="post__wrap">
+                        (followers/like)
+                    </span>
+                </p>
+            </div>
+        )
+    }
+    console.log(userPosts)
 
     return (
         <div className="content container">
@@ -49,6 +61,9 @@ export const Content: React.FC = () => {
                     Show info
                 </button>
             </form>
+            <div className="posts">
+                {itemsToRender}
+            </div>
         </div>
     )
 }
