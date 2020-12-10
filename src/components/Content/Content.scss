@@ -27,6 +27,7 @@
     @extend %pt-sans-narrow-regular;
     border: 2px solid $palette-border;
     transition: all 0.3s ease;
+    background-color: $palette-primary;
 
     &::placeholder {
       color: $palette-active;
@@ -87,4 +88,24 @@
   }
 }
 
-@import "../../styles/media";
+@media (max-width: 660px) {
+  .posts {
+    width: 60%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .content {
+    &__form {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .posts {
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+  }
+}

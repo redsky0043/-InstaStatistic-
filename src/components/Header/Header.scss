@@ -48,5 +48,15 @@
     }
 }
 
+@media (max-width: 420px) {
+    .header {
+        flex-direction: column;
+
+        &__logo {
+            margin-bottom: 15px;
+        }
+    }
+}
+
 
 

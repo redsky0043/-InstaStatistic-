@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
-import {useData} from "../../Hooks/useData/useData";
+import React, { useState } from 'react';
+import { useData } from "../../Hooks/useData/useData";
 import './Content.scss';
+import {Sort} from "../Sort/Sort";
 
 
 export const Content: React.FC = () => {
@@ -17,26 +18,6 @@ export const Content: React.FC = () => {
         e.preventDefault();
         setNickname(inputValue);
     }
-
-    let itemsToRender;
-    if (userPosts) {
-        itemsToRender = userPosts.map((post: any) =>
-            <div className="post" key={post.id}>
-                <img
-                    className="post__img"
-                    src={post.imageUrl}
-                    alt="post"
-                />
-                <p className="post__text">
-                    {Math.round(post.likesCount / userData.subscribersCount * 100 ) } % &nbsp;
-                    <span className="post__wrap">
-                        (followers/like)
-                    </span>
-                </p>
-            </div>
-        )
-    }
-    console.log(userPosts)
 
     return (
         <div className="content container">
@@ -61,8 +42,26 @@ export const Content: React.FC = () => {
                     Show info
                 </button>
             </form>
+            <Sort />
             <div className="posts">
-                {itemsToRender}
+                { userPosts
+                    ? userPosts.map((post: any) =>
+                        <div className="post" key={post.id}>
+                            <img
+                                className="post__img"
+                                src={post.imageUrl}
+                                alt="post"
+                            />
+                            <p className="post__text">
+                                {Math.round(post.likesCount / userData.subscribersCount * 100)} % &nbsp;
+                                <span className="post__wrap">
+                                    (followers/like)
+                                </span>
+                            </p>
+                        </div>
+                    )
+                    : <p>Your photos could be here ...</p>
+                }
             </div>
         </div>
     )
