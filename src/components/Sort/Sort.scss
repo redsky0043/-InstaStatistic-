@@ -1,0 +1,32 @@
+@import "../../styles/variables";
+
+.sort {
+  font-size: 28px;
+  line-height: 36px;
+  @extend %pt-sans-narrow-bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  &__title {
+    margin-right: 20px;
+  }
+
+  &__wrapper {
+    background-color: $palette-primary;
+    font-size: 18px;
+    line-height: 23px;
+    @extend %pt-sans-narrow-regular;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-radius: 0;
+    border: none;
+    padding: 24px 80px 21px 24px;
+    outline: none;
+    appearance: none;
+    background-image: url("../../images/dropdown-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: right 24px center;
+  }
+}
