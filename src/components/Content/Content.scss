@@ -62,6 +62,7 @@
   justify-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px 30px;
+  margin-bottom: 60px;
 }
 
 .post {
@@ -87,6 +88,9 @@
     @extend %pt-sans-narrow-regular;
   }
 }
+
+
+// Media
 
 @media (max-width: 660px) {
   .posts {

@@ -1,8 +1,11 @@
 import React from 'react';
+import { connect } from "react-redux";
+
 import { Header } from './components/Header/Header';
-import { Sort } from './components/Sort/Sort';
-import { Content } from './components/Content/Content';
+import Content from './components/Content/Content';
+
 import './styles/_global.scss';
+import './styles/_variables.scss';
 
 const App: React.FC = () => {
   return (
@@ -13,4 +16,10 @@ const App: React.FC = () => {
   );
 }
 
-export default App;
+function mapStateToProps(state: any) {
+    return {
+        user: state.userNickName.nickName
+    }
+}
+
+export default connect(mapStateToProps)(App);

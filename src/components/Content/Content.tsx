@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { useData } from "../../Hooks/useData/useData";
+import {connect} from 'react-redux';
+
 import './Content.scss';
-import {Sort} from "../Sort/Sort";
+import { useData } from "../../Hooks/useData/useData";
+import Sort from "../Sort/Sort";
+import {showUser} from "../../redux/actions/actions";
 
-
-export const Content: React.FC = () => {
+const Content: React.FC = (props: any) => {
     const [inputValue, setInputValue] = useState('');
     const [nickname, setNickname] = useState('');
-    const userData: any = useData(nickname).instagramData;
-    const userPosts: any = userData.posts;
+    const {instagramData}: any = useData(nickname);
+    const {posts}: any = instagramData;
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setInputValue(e.target.value);
@@ -17,6 +19,7 @@ export const Content: React.FC = () => {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
         setNickname(inputValue);
+        props.showUser(nickname);
     }
 
     return (
@@ -44,8 +47,8 @@ export const Content: React.FC = () => {
             </form>
             <Sort />
             <div className="posts">
-                { userPosts
-                    ? userPosts.map((post: any) =>
+                { posts
+                    ? posts.map((post: any) =>
                         <div className="post" key={post.id}>
                             <img
                                 className="post__img"
@@ -53,7 +56,7 @@ export const Content: React.FC = () => {
                                 alt="post"
                             />
                             <p className="post__text">
-                                {Math.round(post.likesCount / userData.subscribersCount * 100)} % &nbsp;
+                                {Math.round(post.likesCount / instagramData.subscribersCount * 100)} % &nbsp;
                                 <span className="post__wrap">
                                     (followers/like)
                                 </span>
@@ -66,3 +69,15 @@ export const Content: React.FC = () => {
         </div>
     )
 }
+
+const mapStateToProps = (state: any) => {
+    return {
+        stateData: state.userNickName.nickName
+    }
+}
+
+const mapDispatchToProps = {
+    showUser
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Content);

@@ -1,0 +1,1 @@
+export const SHOW_USER_PHOTO = 'CONTENT/SHOW_USER_PHOTO';

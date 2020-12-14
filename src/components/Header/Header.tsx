@@ -1,8 +1,6 @@
 import React from 'react';
-import github from '../../images/github.svg';
-import linkedin from '../../images/linkedin.svg';
-import instagram from '../../images/instagram.svg';
-import facebook from '../../images/facebook.svg';
+import Icon from '../Icon/Icon';
+import { iconTypes } from "../Icon/Icon";
 import './Header.scss';
 
 export const Header:React.FC = () => {
@@ -16,22 +14,22 @@ export const Header:React.FC = () => {
             <ul className="header__contacts">
                 <li className="social-item">
                     <a className="social-link" href="#" target="_blank" >
-                        <img className="social-img" src={github} alt="social" />
+                        <Icon type={iconTypes.github} />
                     </a>
                 </li>
                 <li className="social-item">
                     <a className="social-link" href="#" target="_blank" >
-                        <img className="social-img" src={linkedin} alt="social" />
+                        <Icon type={iconTypes.linkedin} />
                     </a>
                 </li>
                 <li className="social-item">
                     <a className="social-link" href="#" target="_blank" >
-                        <img className="social-img" src={instagram} alt="social" />
+                        <Icon type={iconTypes.instagram} />
                     </a>
                 </li>
                 <li className="social-item">
                     <a className="social-link" href="#" target="_blank" >
-                        <img className="social-img" src={facebook} alt="social" />
+                        <Icon type={iconTypes.facebook} />
                     </a>
                 </li>
             </ul>
