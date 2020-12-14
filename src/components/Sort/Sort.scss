@@ -1,13 +1,11 @@
 @import "../../styles/variables";
 
 .sort {
-  font-size: 28px;
-  line-height: 36px;
-  @extend %pt-sans-narrow-bold;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 40px;
+  @include font($bold, 28px, 36px, inherit);
 
   &__title {
     margin-right: 20px;
@@ -15,9 +13,7 @@
 
   &__wrapper {
     background-color: $palette-primary;
-    font-size: 18px;
-    line-height: 23px;
-    @extend %pt-sans-narrow-regular;
+    @include font($regular, 18px, 23px, $palette-text-dark);
     text-transform: capitalize;
     cursor: pointer;
     border-radius: 0;

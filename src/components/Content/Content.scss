@@ -2,10 +2,9 @@
 
 .content {
   &__text {
-    font-size: 18px;
-    line-height: 23px;
     margin-bottom: 14px;
     text-transform: capitalize;
+    @include font($regular, 18px, 26px);
   }
 
   &__form {
@@ -20,11 +19,8 @@
 
   &__input {
     width: 100%;
-    font-size: 16px;
-    line-height: 21px;
     padding: 22px 16px 21px;
-    color: $palette-text-dark;
-    @extend %pt-sans-narrow-regular;
+    @include font($regular, 16px, 21px, $palette-text-dark);
     border: 2px solid $palette-border;
     transition: all 0.3s ease;
     background-color: $palette-primary;
@@ -41,13 +37,10 @@
   &__btn {
     width: 100%;
     background: #c58fff;
-    border-radius: 0px;
+    border-radius: 0;
     padding: 20px 0;
-    font-size: 22px;
-    line-height: 28px;
-    color: $palette-text-light;
-    @extend %pt-sans-narrow-regular;
     transition: all 0.3s ease;
+    @include font($regular, 22px, 28px, $palette-text-light);
 
     &:hover {
       background-color: #a461ec;
@@ -68,10 +61,8 @@
 .post {
   width: 100%;
   height: 100%;
-  @extend %pt-sans-narrow-bold;
   position: relative;
-  font-size: 18px;
-  line-height: 23px;
+  @include font($regular, 18px, 23px, $palette-text-light);
 
   &__img {
     width: 100%;
@@ -84,8 +75,7 @@
   }
 
   &__wrap {
-    font-size: 16px;
-    @extend %pt-sans-narrow-regular;
+    @include font($regular, 16px);
   }
 }
 

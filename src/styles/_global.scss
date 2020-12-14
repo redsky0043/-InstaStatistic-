@@ -39,8 +39,7 @@ body {
     overflow-x: hidden;
     position: relative;
     background-color: $palette-bg;
-    color: $palette-primary;
-    @extend %pt-sans-narrow-regular;
+    @include font($regular, inherit, inherit, $palette-primary);
 }
 
 button {

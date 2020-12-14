@@ -16,19 +16,18 @@ $palette-active: $x-color-violet;
 $palette-footer: $x-color-gray;
 $palette-border: $x-color-white;
 
+$regular: 400;
+$bold: 700;
+
 // Google Fonts
-%pt-sans-narrow-regular {
-    font-family: 'PT Sans Narrow', sans-serif;
-    font-weight: 400;
-}
+$family: 'PT Sans Narrow', sans-serif;
+//$family: 'Bebas Neue', cursive;
 
-%pt-sans-narrow-bold {
-    font-family: 'PT Sans Narrow', sans-serif;
-    font-weight: 700;
+// Mixins
+@mixin font ($weight, $size, $height: inherit, $color: inherit) {
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+    font-family: $family;
+    color: $color;
 }
-
-%bebas-regular {
-    font-family: 'Bebas Neue', cursive;
-    font-weight: 700;
-}
-
