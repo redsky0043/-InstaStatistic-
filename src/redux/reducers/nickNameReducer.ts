@@ -1,7 +1,7 @@
 import {SHOW_USER_PHOTO} from "../types";
 
 const initialState = {
-    nickName: '',
+    nickName: 'unknown user',
 }
 
 export default function nickNameReducer (state = initialState, action: any) {

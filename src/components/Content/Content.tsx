@@ -19,7 +19,7 @@ const Content: React.FC = (props: any) => {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
         setNickname(inputValue);
-        props.showUser(nickname);
+        props.showUser(inputValue);
     }
 
     return (

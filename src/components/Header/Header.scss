@@ -37,11 +37,11 @@
     }
 }
 
-.social-link img{
-    transition: all .3s ease;
-
-    &:hover {
-        opacity: .5;
+.header__contacts {
+    transition: all 0.3s ease;
+    &:hover .social-link img:not(:hover) {
+        opacity: 0.5;
+        transition: all 0.3s ease;
     }
 }
 
