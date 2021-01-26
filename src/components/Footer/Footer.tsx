@@ -1,7 +1,6 @@
 import React from 'react';
 import Icon from '../Icon/Icon';
 import { iconTypes } from "../Icon/Icon";
-// import {connect} from "react-redux";
 
 import './Footer.scss';
 
