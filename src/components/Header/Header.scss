@@ -27,18 +27,16 @@
         transition: all .3s ease;
         color: $palette-text-light;
     }
-
-    &__contacts {
-        width: 100%;
-        max-width: 192px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
 }
 
-.header__contacts {
+.contacts {
+    width: 100%;
+    max-width: 192px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     transition: all 0.3s ease;
+
     &:hover .social-link img:not(:hover) {
         opacity: 0.5;
         transition: all 0.3s ease;

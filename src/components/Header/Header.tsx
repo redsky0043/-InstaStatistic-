@@ -11,7 +11,7 @@ export const Header:React.FC = () => {
                     Insta<span className="header__text-wrapper">Statistic</span>
                 </h3>
             </a>
-            <ul className="header__contacts">
+            <ul className="contacts">
                 <li className="social-item">
                     <a className="social-link" href="#" target="_blank" >
                         <Icon type={iconTypes.github} />

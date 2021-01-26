@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import './Content.scss';
 import { useData } from "../../Hooks/useData/useData";
 import Sort from "../Sort/Sort";
-import {showUser} from "../../redux/actions/actions";
+import { showUser } from "../../redux/actions/actions";
 
 const Content: React.FC = (props: any) => {
     const [inputValue, setInputValue] = useState('');
     const [nickname, setNickname] = useState('');
-    const {instagramData}: any = useData(nickname);
-    const {posts}: any = instagramData;
+    const { instagramData }: any = useData(nickname);
+    const { posts }: any = instagramData;
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setInputValue(e.target.value);
@@ -47,7 +47,7 @@ const Content: React.FC = (props: any) => {
             </form>
             <Sort />
             <div className="posts">
-                { posts
+                {posts
                     ? posts.map((post: any) =>
                         <div className="post" key={post.id}>
                             <img
@@ -65,6 +65,14 @@ const Content: React.FC = (props: any) => {
                     )
                     : <p>Your photos could be here ...</p>
                 }
+
+                {/* {
+                    posts
+                        ? posts.filter((item: any, index: any, array: any) => {
+                            console.log(item[0])
+                        })
+                        : <p>Your photos could be here ...</p>
+                } */}
             </div>
         </div>
     )

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import { Header } from './components/Header/Header';
 import Content from './components/Content/Content';
+import { Footer } from './components/Footer/Footer';
 
 import './styles/_global.scss';
 import './styles/_variables.scss';
@@ -12,6 +13,7 @@ const App: React.FC = () => {
     <div className="App">
       <Header />
       <Content />
+      <Footer />
     </div>
   );
 }

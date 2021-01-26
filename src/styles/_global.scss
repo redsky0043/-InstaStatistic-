@@ -62,3 +62,11 @@ input {
     position: relative;
 }
 
+// scrollbar style
+::-webkit-scrollbar {
+	width: 6px;
+    background-color: #131313;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #3f3f3f;
+}

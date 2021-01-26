@@ -18,7 +18,7 @@ const iconSrc = {
     facebook: facebook,
 }
 
-export default function Icon ({ type  }){
+export default function Icon ({ type }){
 
     return (
         <div>

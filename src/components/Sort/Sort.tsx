@@ -2,13 +2,13 @@ import React from 'react';
 import './Sort.scss';
 import {connect} from "react-redux";
 
-import Dropdown from 'react-dropdown';
+// import Dropdown from 'react-dropdown';
 // import 'react-dropdown/style.css';
 
-const options = [
-    'popular', 'resent', 'last'
-];
-const defaultOption = 'sort by';
+// const options = [
+//     'popular', 'resent', 'last'
+// ];
+// const defaultOption = 'sort by';
 
 const Sort: React.FC = (props: any) => {
     return (

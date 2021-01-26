@@ -1,6 +1,8 @@
 @import "../../styles/variables";
 
 .content {
+  min-height: calc(100vh - 324px);
+
   &__text {
     margin-bottom: 14px;
     text-transform: capitalize;
